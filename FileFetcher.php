@@ -11,7 +11,7 @@ if ( defined( 'FileFetcher_VERSION' ) ) {
 	return;
 }
 
-define( 'FileFetcher_VERSION', '0.1' );
+define( 'FileFetcher_VERSION', '1.0' );
 
 if ( !defined( 'SimpleCache_VERSION' ) && is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
 	include_once( __DIR__ . '/vendor/autoload.php' );
