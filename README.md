@@ -21,7 +21,7 @@ FileFetcher 1.0:
 
     {
         "require": {
-            "sebastian/git": "1.0.*"
+            "jeroen-de-dauw/file-fetcher": "1.0.*"
         }
     }
 
