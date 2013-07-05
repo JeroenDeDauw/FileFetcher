@@ -5,6 +5,8 @@ namespace FileFetcher;
 use SimpleCache\Cache\Cache;
 
 /**
+ * Decorator for FileFetcher objects that adds caching capabilities.
+ *
  * @file
  * @since 0.1
  * @ingroup FileFetcher

@@ -1,12 +1,10 @@
 [![Build Status](https://secure.travis-ci.org/JeroenDeDauw/FileFetcher.png?branch=master)](http://travis-ci.org/JeroenDeDauw/FileFetcher)
 
-About
-=====
+# FileFetcher
 
 Small library providing a simple FileFetcher interface.
 
-Installation
-============
+## Installation
 
 You can use [Composer](http://getcomposer.org/) to download and install
 this package as well as its dependencies. Alternatively you can simply clone
@@ -32,8 +30,17 @@ You can find a list of the dependencies in the "require" section of the composer
 Load all dependencies and the load the FileFetcher library by including its entry point:
 FileFetcher.php.
 
-Links
------
+## Release notes
+
+### 1.0.1
+
+* Added SimpleFileFetcher implementation
+
+### 1.0
+
+* Initial release with FileFetcher interface and CachingFileFetcher implementation
+
+## Links
 
 * [FileFetcher on Packagist](https://packagist.org/packages/jeroen-de-dauw/file-fetcher)
 * [Latest version of the readme file](https://github.com/JeroenDeDauw/FileFetcher/blob/master/README.md)

@@ -16,5 +16,8 @@
         <testsuite name="FileFetcher">
             <directory>Tests/Phpunit</directory>
         </testsuite>
+        <testsuite name="FileFetcherIntegration">
+            <directory>Tests/Integration</directory>
+        </testsuite>
     </testsuites>
 </phpunit>

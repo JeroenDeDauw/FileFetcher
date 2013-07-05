@@ -12,6 +12,15 @@ namespace FileFetcher;
  */
 interface FileFetcher {
 
+	/**
+	 * Returns the contents of the specified file.
+	 *
+	 * @since 0.1
+	 *
+	 * @param string $fileUrl
+	 *
+	 * @return string
+	 */
 	public function fetchFile( $fileUrl );
 
 }
