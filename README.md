@@ -13,7 +13,7 @@ the git repository and take care of loading yourself.
 ### Composer
 
 To add this package as a local, per-project dependency to your project, simply add a
-dependency on `JeroenDeDauw/FileFetcher` to your project's `composer.json` file.
+dependency on `jeroen-de-dauw/file-fetcher` to your project's `composer.json` file.
 Here is a minimal example of a `composer.json` file that just defines a dependency on
 FileFetcher 1.0:
 
