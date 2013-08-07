@@ -7,6 +7,10 @@ php:
 
 before_script: composer install
 
+after_script:
+  - composer require satooshi/php-coveralls:dev-master
+  - php vendor/bin/coveralls -v
+
 notifications:
   email:
     recipients:
