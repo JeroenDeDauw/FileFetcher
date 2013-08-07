@@ -4,6 +4,7 @@
 [![Download count](https://poser.pugx.org/jeroen-de-dauw/file-fetcher/d/total.png)](https://packagist.org/packages/jeroen-de-dauw/file-fetcher)
 [![Build Status](https://secure.travis-ci.org/JeroenDeDauw/FileFetcher.png?branch=master)](http://travis-ci.org/JeroenDeDauw/FileFetcher)
 [![Coverage Status](https://coveralls.io/repos/JeroenDeDauw/FileFetcher/badge.png?branch=master)](https://coveralls.io/r/JeroenDeDauw/FileFetcher?branch=master)
+[![Dependency Status](https://www.versioneye.com/package/php--jeroen-de-dauw--file-fetcher/badge.png)](https://www.versioneye.com/package/php--jeroen-de-dauw--file-fetcher)
 
 Small library providing a simple FileFetcher interface.
 
