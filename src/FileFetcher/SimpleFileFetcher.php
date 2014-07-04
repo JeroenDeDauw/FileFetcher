@@ -5,9 +5,7 @@ namespace FileFetcher;
 /**
  * Adapter around file_get_contents.
  *
- * @file
- * @since 0.1
- * @ingroup FileFetcher
+ * @since 1.0
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
