@@ -3,8 +3,7 @@
 namespace FileFetcher;
 
 /**
- * @file
- * @since 0.1
+ * @since 1.0
  * @ingroup FileFetcher
  *
  * @licence GNU GPL v2+
@@ -15,7 +14,7 @@ interface FileFetcher {
 	/**
 	 * Returns the contents of the specified file.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param string $fileUrl
 	 *
