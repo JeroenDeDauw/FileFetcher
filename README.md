@@ -4,7 +4,7 @@ Small library providing a simple FileFetcher interface.
 
 [![Build Status](https://secure.travis-ci.org/JeroenDeDauw/FileFetcher.png?branch=master)](http://travis-ci.org/JeroenDeDauw/FileFetcher)
 [![Coverage Status](https://coveralls.io/repos/JeroenDeDauw/FileFetcher/badge.png?branch=master)](https://coveralls.io/r/JeroenDeDauw/FileFetcher?branch=master)
-
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/JeroenDeDauw/FileFetcher/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/JeroenDeDauw/FileFetcher/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/jeroen-de-dauw/file-fetcher/version.png)](https://packagist.org/packages/jeroen-de-dauw/file-fetcher)
 [![Download count](https://poser.pugx.org/jeroen-de-dauw/file-fetcher/d/total.png)](https://packagist.org/packages/jeroen-de-dauw/file-fetcher)
 

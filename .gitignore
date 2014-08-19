@@ -5,6 +5,7 @@
 !.gitignore
 !.gitreview
 !.travis.yml
+!.scrutinizer.yml
 
 /vendor/
 composer.lock
