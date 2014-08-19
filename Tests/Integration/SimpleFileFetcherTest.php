@@ -29,7 +29,7 @@ class SimpleFileFetcherTest extends \PHPUnit_Framework_TestCase {
 	public function testGetThisFileFromGitHub() {
 		$fetcher = new SimpleFileFetcher();
 
-		$contents = $fetcher->fetchFile( 'https://raw.github.com/JeroenDeDauw/FileFetcher/master/Tests/Integration/SimpleFileFetcherTest.php' );
+		$contents = $fetcher->fetchFile( 'http://raw.github.com/JeroenDeDauw/FileFetcher/master/Tests/Integration/SimpleFileFetcherTest.php' );
 
 		$this->assertInternalType( 'string', $contents );
 
