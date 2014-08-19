@@ -5,8 +5,8 @@ Small library providing a simple FileFetcher interface.
 [![Build Status](https://secure.travis-ci.org/JeroenDeDauw/FileFetcher.png?branch=master)](http://travis-ci.org/JeroenDeDauw/FileFetcher)
 [![Coverage Status](https://coveralls.io/repos/JeroenDeDauw/FileFetcher/badge.png?branch=master)](https://coveralls.io/r/JeroenDeDauw/FileFetcher?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/JeroenDeDauw/FileFetcher/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/JeroenDeDauw/FileFetcher/?branch=master)
-[![Latest Stable Version](https://poser.pugx.org/jeroen-de-dauw/file-fetcher/version.png)](https://packagist.org/packages/jeroen-de-dauw/file-fetcher)
-[![Download count](https://poser.pugx.org/jeroen-de-dauw/file-fetcher/d/total.png)](https://packagist.org/packages/jeroen-de-dauw/file-fetcher)
+[![Latest Stable Version](https://poser.pugx.org/jeroen/file-fetcher/version.png)](https://packagist.org/packages/jeroen/file-fetcher)
+[![Download count](https://poser.pugx.org/jeroen/file-fetcher/d/total.png)](https://packagist.org/packages/jeroen/file-fetcher)
 
 ## Installation
 
@@ -17,13 +17,13 @@ the git repository and take care of loading yourself.
 ### Composer
 
 To add this package as a local, per-project dependency to your project, simply add a
-dependency on `jeroen-de-dauw/file-fetcher` to your project's `composer.json` file.
+dependency on `jeroen/file-fetcher` to your project's `composer.json` file.
 Here is a minimal example of a `composer.json` file that just defines a dependency on
-FileFetcher 1.0:
+FileFetcher 2.0:
 
     {
         "require": {
-            "jeroen-de-dauw/file-fetcher": "1.0.*"
+            "jeroen/file-fetcher": "~2.0.0"
         }
     }
 
@@ -50,5 +50,5 @@ FileFetcher.php.
 
 ## Links
 
-* [FileFetcher on Packagist](https://packagist.org/packages/jeroen-de-dauw/file-fetcher)
+* [FileFetcher on Packagist](https://packagist.org/packages/jeroen/file-fetcher)
 * [Latest version of the readme file](https://github.com/JeroenDeDauw/FileFetcher/blob/master/README.md)
