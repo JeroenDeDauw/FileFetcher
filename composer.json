@@ -1,9 +1,13 @@
 {
-	"name": "jeroen-de-dauw/file-fetcher",
+	"name": "jeroen/file-fetcher",
 	"type": "library",
 	"description": "Simple file fetching interface",
 	"keywords": [
-		"file fetcher"
+		"file fetcher",
+		"file_get_contents",
+		"cache",
+		"wget",
+		"curl"
 	],
 	"homepage": "https://github.com/JeroenDeDauw/FileFetcher",
 	"license": "GPL-2.0+",
@@ -17,12 +21,16 @@
 	],
 	"require": {
 		"php": ">=5.3.0",
-		"jeroen-de-dauw/simple-cache": "1.*"
+		"jeroen/simple-cache": "~2.0"
 	},
-	"minimum-stability" : "dev",
 	"autoload": {
-		"files" : [
-			"FileFetcher.php"
-		]
+		"psr-4": {
+			"FileFetcher\\": "src/"
+		}
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "2.0.x-dev"
+		}
 	}
 }
