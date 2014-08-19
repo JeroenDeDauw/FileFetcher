@@ -7,12 +7,6 @@ use FileFetcher\CachingFileFetcher;
 /**
  * @covers FileFetcher\CachingFileFetcher
  *
- * @file
- * @since 0.1
- *
- * @ingroup FileFetcher
- * @group FileFetcher
- *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
