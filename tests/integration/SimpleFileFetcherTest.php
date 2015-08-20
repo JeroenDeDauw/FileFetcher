@@ -24,7 +24,7 @@ class SimpleFileFetcherTest extends \PHPUnit_Framework_TestCase {
 		$fetcher = new SimpleFileFetcher();
 
 		$contents = $fetcher->fetchFile(
-			'http://raw.github.com/JeroenDeDauw/FileFetcher/master/Tests/Integration/SimpleFileFetcherTest.php'
+			'http://raw.github.com/JeroenDeDauw/FileFetcher/master/tests/integration/SimpleFileFetcherTest.php'
 		);
 
 		$this->assertInternalType( 'string', $contents );
