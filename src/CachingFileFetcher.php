@@ -7,7 +7,7 @@ use SimpleCache\Cache\Cache;
 /**
  * Decorator for FileFetcher objects that adds caching capabilities.
  *
- * @since 1.0
+ * @since 3.0
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
@@ -22,6 +22,14 @@ class CachingFileFetcher implements FileFetcher {
 		$this->cache = $cache;
 	}
 
+	/**
+	 * @see FileFetcher::fetchFile
+	 *
+	 * @param string $fileUrl
+	 *
+	 * @return string
+	 * @throws FileFetchingException
+	 */
 	public function fetchFile( $fileUrl ) {
 		$fileContents = $this->cache->get( $fileUrl );
 

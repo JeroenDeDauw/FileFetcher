@@ -39,6 +39,7 @@ FileFetcher.php.
 ### 3.0.0 (dev)
 
 * Added PHPCS and PHPMD integration
+* Added `FileFetchingException`, which should now be thrown by implementations of `FileFetcher` on error
 
 ### 2.0.0 (2014-08-19)
 

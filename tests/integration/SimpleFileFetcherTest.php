@@ -32,4 +32,22 @@ class SimpleFileFetcherTest extends \PHPUnit_Framework_TestCase {
 		$this->assertInternalType( 'integer', strpos( $contents, __FUNCTION__ ) );
 	}
 
+	public function testGivenNotFoundFile_exceptionIsThrown() {
+		$fetcher = new SimpleFileFetcher();
+
+		$this->setExpectedException( 'FileFetcher\FileFetchingException' );
+		$fetcher->fetchFile(
+			'http://raw.github.com/JeroenDeDauw/FileFetcher/master/foo.php'
+		);
+	}
+
+	public function testGivenInvalidUrl_exceptionIsThrown() {
+		$fetcher = new SimpleFileFetcher();
+
+		$this->setExpectedException( 'FileFetcher\FileFetchingException' );
+		$fetcher->fetchFile(
+			'foo bar baz'
+		);
+	}
+
 }
