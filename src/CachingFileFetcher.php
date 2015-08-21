@@ -14,8 +14,8 @@ use SimpleCache\Cache\Cache;
  */
 class CachingFileFetcher implements FileFetcher {
 
-	protected $fileFetcher;
-	protected $cache;
+	private $fileFetcher;
+	private $cache;
 
 	public function __construct( FileFetcher $fileFetcher, Cache $cache ) {
 		$this->fileFetcher = $fileFetcher;
@@ -40,7 +40,7 @@ class CachingFileFetcher implements FileFetcher {
 		return $fileContents;
 	}
 
-	protected function retrieveAndCacheFile( $fileUrl ) {
+	private function retrieveAndCacheFile( $fileUrl ) {
 		$fileContents = $this->fileFetcher->fetchFile( $fileUrl );
 
 		$this->cache->set( $fileUrl, $fileContents );

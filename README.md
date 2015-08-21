@@ -36,10 +36,11 @@ FileFetcher.php.
 
 ## Release notes
 
-### 3.0.0 (dev)
+### 3.0.0 (2015-08-21)
 
-* Added PHPCS and PHPMD integration
 * Added `FileFetchingException`, which should now be thrown by implementations of `FileFetcher` on error
+* The non-public fields and methods of `CachingFileFetcher` are now private rather than protected
+* Added PHPCS and PHPMD integration
 
 ### 2.0.0 (2014-08-19)
 
