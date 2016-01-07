@@ -36,6 +36,10 @@ FileFetcher.php.
 
 ## Release notes
 
+### 4.0.0 (2016-dev)
+
+* 
+
 ### 3.0.0 (2015-08-21)
 
 * Added `FileFetchingException`, which should now be thrown by implementations of `FileFetcher` on error

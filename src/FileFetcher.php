@@ -3,7 +3,7 @@
 namespace FileFetcher;
 
 /**
- * @since 3.0
+ * @since 4.0
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
@@ -11,13 +11,13 @@ namespace FileFetcher;
 interface FileFetcher {
 
 	/**
-	 * Returns the contents of the specified file.
-	 *
-	 * @since 3.0
+	 * Returns the contents of the specified file as string, or null if the file is not found.
+	 * An exception can be thrown when file access is prevented due to things such as
+	 * network outage and insufficient privileges.
 	 *
 	 * @param string $fileUrl
 	 *
-	 * @return string
+	 * @return string|null
 	 * @throws FileFetchingException
 	 */
 	public function fetchFile( $fileUrl );
