@@ -13,8 +13,8 @@ use FileFetcher\CachingFileFetcher;
 class CachingFileFetcherTest extends \PHPUnit_Framework_TestCase {
 
 	public function testCanConstruct() {
-		$fileFetcher = $this->getMock( 'FileFetcher\FileFetcher' );
-		$cache = $this->getMock( 'SimpleCache\Cache\Cache' );
+		$fileFetcher = $this->createMock( 'FileFetcher\FileFetcher' );
+		$cache = $this->createMock( 'SimpleCache\Cache\Cache' );
 
 		new CachingFileFetcher( $fileFetcher, $cache );
 
@@ -25,14 +25,14 @@ class CachingFileFetcherTest extends \PHPUnit_Framework_TestCase {
 		$fileUrl = 'foo://bar';
 		$fileContents = 'NyanData across the sky!';
 
-		$fileFetcher = $this->getMock( 'FileFetcher\FileFetcher' );
+		$fileFetcher = $this->createMock( 'FileFetcher\FileFetcher' );
 
 		$fileFetcher->expects( $this->once() )
 			->method( 'fetchFile' )
 			->with( $fileUrl )
 			->will( $this->returnValue( $fileContents ) );
 
-		$cache = $this->getMock( 'SimpleCache\Cache\Cache' );
+		$cache = $this->createMock( 'SimpleCache\Cache\Cache' );
 
 		$cache->expects( $this->once() )
 			->method( 'get' )
@@ -51,12 +51,12 @@ class CachingFileFetcherTest extends \PHPUnit_Framework_TestCase {
 		$fileUrl = 'foo://bar';
 		$fileContents = 'NyanData across the sky!';
 
-		$fileFetcher = $this->getMock( 'FileFetcher\FileFetcher' );
+		$fileFetcher = $this->createMock( 'FileFetcher\FileFetcher' );
 
 		$fileFetcher->expects( $this->never() )
 			->method( 'fetchFile' );
 
-		$cache = $this->getMock( 'SimpleCache\Cache\Cache' );
+		$cache = $this->createMock( 'SimpleCache\Cache\Cache' );
 
 		$cache->expects( $this->once() )
 			->method( 'get' )

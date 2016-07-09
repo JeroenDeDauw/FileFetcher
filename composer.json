@@ -24,7 +24,7 @@
 		"jeroen/simple-cache": "~2.0"
 	},
 	"require-dev": {
-		"phpunit/phpunit": "~4.0",
+		"phpunit/phpunit": "~5.4",
 		"squizlabs/php_codesniffer": "~2.1",
 		"phpmd/phpmd": "~2.1",
 		"ockcyp/covers-validator": "~0.4"
