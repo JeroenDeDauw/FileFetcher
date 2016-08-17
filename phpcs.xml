@@ -5,7 +5,9 @@
 -->
 <ruleset name="MediaWiki">
     <rule ref="Generic.Classes" />
-    <rule ref="Generic.CodeAnalysis" />
+    <rule ref="Generic.CodeAnalysis">
+        <exclude name="Generic.CodeAnalysis.EmptyStatement" />
+    </rule>
     <rule ref="Generic.ControlStructures" />
 
     <rule ref="Generic.Files.ByteOrderMark" />

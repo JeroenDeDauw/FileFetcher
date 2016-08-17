@@ -36,6 +36,11 @@ FileFetcher.php.
 
 ## Release notes
 
+### 3.2.0 (2016-08-18)
+
+* Dropped support for PHP 5.3 and 5.4
+* Added `SpyingFileFetcher`
+
 ### 3.1.0 (2016-01-07)
 
 * Added `InMemoryFileFetcher`
