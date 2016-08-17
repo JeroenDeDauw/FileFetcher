@@ -12,6 +12,8 @@ use InvalidArgumentException;
  */
 class InMemoryFileFetcher implements FileFetcher {
 
+	private $files;
+
 	/**
 	 * @param string[] $files
 	 * @throws InvalidArgumentException
