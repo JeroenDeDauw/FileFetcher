@@ -34,7 +34,25 @@ You can find a list of the dependencies in the "require" section of the composer
 Load all dependencies and the load the FileFetcher library by including its entry point:
 FileFetcher.php.
 
+## Running the tests
+
+For tests only
+
+    composer test
+
+For style checks only
+
+	composer cs
+
+For a full CI run
+
+	composer ci
+
 ## Release notes
+
+### 3.2.0 (dev)
+
+* Dropped support for PHP 5.3, 5.4 and 5.5
 
 ### 3.1.0 (2016-01-07)
 
@@ -54,7 +72,7 @@ FileFetcher.php.
 
 * Added SimpleFileFetcher implementation
 
-### 1.0
+### 1.0.0
 
 * Initial release with FileFetcher interface and CachingFileFetcher implementation
 
