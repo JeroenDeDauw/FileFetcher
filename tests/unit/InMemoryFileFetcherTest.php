@@ -2,6 +2,7 @@
 
 namespace FileFetcher\Tests\Phpunit;
 
+use FileFetcher\FileFetchingException;
 use FileFetcher\InMemoryFileFetcher;
 use PHPUnit\Framework\TestCase;
 
@@ -16,7 +17,7 @@ class InMemoryFileFetcherTest extends TestCase {
 	public function testWhenEmptyHash_requestsCauseException() {
 		$fetcher = new InMemoryFileFetcher( array() );
 
-		$this->expectException( 'FileFetcher\FileFetchingException' );
+		$this->expectException( FileFetchingException::class );
 		$fetcher->fetchFile( 'http://foo.bar/baz' );
 	}
 
@@ -25,7 +26,7 @@ class InMemoryFileFetcherTest extends TestCase {
 			'http://something.else/entirely' => 'kittens'
 		) );
 
-		$this->expectException( 'FileFetcher\FileFetchingException' );
+		$this->expectException( FileFetchingException::class );
 		$fetcher->fetchFile( 'http://foo.bar/baz' );
 	}
 

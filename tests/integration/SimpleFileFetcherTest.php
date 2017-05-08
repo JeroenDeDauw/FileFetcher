@@ -2,6 +2,7 @@
 
 namespace FileFetcher\Tests\Integration;
 
+use FileFetcher\FileFetchingException;
 use FileFetcher\SimpleFileFetcher;
 use PHPUnit\Framework\TestCase;
 
@@ -36,7 +37,7 @@ class SimpleFileFetcherTest extends TestCase {
 	public function testGivenNotFoundFile_exceptionIsThrown() {
 		$fetcher = new SimpleFileFetcher();
 
-		$this->expectException( 'FileFetcher\FileFetchingException' );
+		$this->expectException( FileFetchingException::class );
 		$fetcher->fetchFile(
 			'http://raw.github.com/JeroenDeDauw/FileFetcher/master/foo.php'
 		);
@@ -45,7 +46,7 @@ class SimpleFileFetcherTest extends TestCase {
 	public function testGivenInvalidUrl_exceptionIsThrown() {
 		$fetcher = new SimpleFileFetcher();
 
-		$this->expectException( 'FileFetcher\FileFetchingException' );
+		$this->expectException( FileFetchingException::class );
 		$fetcher->fetchFile(
 			'foo bar baz'
 		);
