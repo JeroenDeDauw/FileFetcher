@@ -53,6 +53,8 @@ For a full CI run
 ### 3.2.0 (dev)
 
 * Dropped support for PHP 5.x
+* Added scalar type hints to the `FileFetcher` interface and its implementations
+* Added scalar type hints to `FileFetchingException`
 
 ### 3.1.0 (2016-01-07)
 

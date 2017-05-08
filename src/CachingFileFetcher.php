@@ -38,7 +38,7 @@ class CachingFileFetcher implements FileFetcher {
 		return $fileContents;
 	}
 
-	private function retrieveAndCacheFile( $fileUrl ) {
+	private function retrieveAndCacheFile( $fileUrl ): string {
 		$fileContents = $this->fileFetcher->fetchFile( $fileUrl );
 
 		$this->cache->set( $fileUrl, $fileContents );
