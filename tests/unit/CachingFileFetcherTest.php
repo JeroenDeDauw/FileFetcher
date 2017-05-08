@@ -3,6 +3,7 @@
 namespace FileFetcher\Tests\Phpunit;
 
 use FileFetcher\CachingFileFetcher;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @covers FileFetcher\CachingFileFetcher
@@ -10,7 +11,7 @@ use FileFetcher\CachingFileFetcher;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class CachingFileFetcherTest extends \PHPUnit_Framework_TestCase {
+class CachingFileFetcherTest extends TestCase {
 
 	public function testCanConstruct() {
 		$fileFetcher = $this->createMock( 'FileFetcher\FileFetcher' );

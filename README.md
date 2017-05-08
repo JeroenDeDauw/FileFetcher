@@ -52,7 +52,7 @@ For a full CI run
 
 ### 3.2.0 (dev)
 
-* Dropped support for PHP 5.3, 5.4 and 5.5
+* Dropped support for PHP 5.x
 
 ### 3.1.0 (2016-01-07)
 

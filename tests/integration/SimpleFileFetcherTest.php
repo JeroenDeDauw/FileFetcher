@@ -3,6 +3,7 @@
 namespace FileFetcher\Tests\Integration;
 
 use FileFetcher\SimpleFileFetcher;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @covers FileFetcher\SimpleFileFetcher
@@ -10,7 +11,7 @@ use FileFetcher\SimpleFileFetcher;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SimpleFileFetcherTest extends \PHPUnit_Framework_TestCase {
+class SimpleFileFetcherTest extends TestCase {
 
 	public function testGetThisFileFromDisk() {
 		$fetcher = new SimpleFileFetcher();
@@ -35,7 +36,7 @@ class SimpleFileFetcherTest extends \PHPUnit_Framework_TestCase {
 	public function testGivenNotFoundFile_exceptionIsThrown() {
 		$fetcher = new SimpleFileFetcher();
 
-		$this->setExpectedException( 'FileFetcher\FileFetchingException' );
+		$this->expectException( 'FileFetcher\FileFetchingException' );
 		$fetcher->fetchFile(
 			'http://raw.github.com/JeroenDeDauw/FileFetcher/master/foo.php'
 		);
@@ -44,7 +45,7 @@ class SimpleFileFetcherTest extends \PHPUnit_Framework_TestCase {
 	public function testGivenInvalidUrl_exceptionIsThrown() {
 		$fetcher = new SimpleFileFetcher();
 
-		$this->setExpectedException( 'FileFetcher\FileFetchingException' );
+		$this->expectException( 'FileFetcher\FileFetchingException' );
 		$fetcher->fetchFile(
 			'foo bar baz'
 		);
