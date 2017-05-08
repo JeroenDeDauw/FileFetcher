@@ -1,5 +1,7 @@
 <?php
 
+declare( strict_types=1 );
+
 namespace FileFetcher\Tests\Phpunit;
 
 use FileFetcher\FileFetchingException;
