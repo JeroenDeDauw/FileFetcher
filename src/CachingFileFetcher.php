@@ -24,13 +24,9 @@ class CachingFileFetcher implements FileFetcher {
 
 	/**
 	 * @see FileFetcher::fetchFile
-	 *
-	 * @param string $fileUrl
-	 *
-	 * @return string
 	 * @throws FileFetchingException
 	 */
-	public function fetchFile( $fileUrl ) {
+	public function fetchFile( string $fileUrl ): string {
 		$fileContents = $this->cache->get( $fileUrl );
 
 		if ( $fileContents === null ) {

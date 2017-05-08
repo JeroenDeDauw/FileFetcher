@@ -28,13 +28,9 @@ class InMemoryFileFetcher implements FileFetcher {
 
 	/**
 	 * @see FileFetcher::fetchFile
-	 *
-	 * @param string $fileUrl
-	 *
-	 * @return string
 	 * @throws FileFetchingException
 	 */
-	public function fetchFile( $fileUrl ) {
+	public function fetchFile( string $fileUrl ): string {
 		if ( array_key_exists( $fileUrl, $this->files ) ) {
 			return $this->files[$fileUrl];
 		}

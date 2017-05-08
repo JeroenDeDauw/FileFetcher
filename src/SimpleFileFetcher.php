@@ -14,13 +14,9 @@ class SimpleFileFetcher implements FileFetcher {
 
 	/**
 	 * @see FileFetcher::fetchFile
-	 *
-	 * @param string $fileUrl
-	 *
-	 * @return string
 	 * @throws FileFetchingException
 	 */
-	public function fetchFile( $fileUrl ) {
+	public function fetchFile( string $fileUrl ): string {
 		$fileContent = @file_get_contents( $fileUrl );
 
 		if ( is_string( $fileContent ) ) {
