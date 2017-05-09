@@ -29,7 +29,7 @@ FileFetcher 4.x:
 The library provides two trivial implementations of the `FileFetcher` interface at its heart:
 
 * `SimpleFileFetcher`: [Adapter](https://en.wikipedia.org/wiki/Adapter_pattern) around file_get_contents
-* `InMemoryFileFetcher`: Adapter around an array provided to its constructor (construct with [] if you want a "throwing fetcher")
+* `InMemoryFileFetcher`: Adapter around an array provided to its constructor (construct with [] for a "throwing fetcher")
 
 It also provides a number of generic [decorators](https://en.wikipedia.org/wiki/Decorator_pattern):
 
