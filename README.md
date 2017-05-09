@@ -11,10 +11,7 @@ Small library providing a simple FileFetcher interface.
 ## Installation
 
 You can use [Composer](http://getcomposer.org/) to download and install
-this package as well as its dependencies. Alternatively you can simply clone
-the git repository and take care of loading yourself.
-
-### Composer
+this package as well as its dependencies.
 
 To add this package as a local, per-project dependency to your project, simply add a
 dependency on `jeroen/file-fetcher` to your project's `composer.json` file.
@@ -27,12 +24,17 @@ FileFetcher 4.x:
         }
     }
 
-### Manual
+## Usage
 
-Get the FileFetcher code, either via git, or some other means. Also get all dependencies.
-You can find a list of the dependencies in the "require" section of the composer.json file.
-Load all dependencies and the load the FileFetcher library by including its entry point:
-FileFetcher.php.
+The library provides two trivial implementations of the `FileFetcher` interface at its heart:
+
+* `SimpleFileFetcher`: Adapter around file_get_contents
+* `InMemoryFileFetcher`: Adapter around an array provided to its constructor
+
+It also provides a number of generic decorators:
+
+* `CachingFileFetcher`: Adds caching capabilities using the [SimpleCache library](https://github.com/JeroenDeDauw/SimpleCache)
+* `SpyingFileFetcher`: A [spy (test double)](https://martinfowler.com/bliki/TestDouble.html)
 
 ## Running the tests
 
