@@ -1,5 +1,7 @@
 <?php
 
+declare( strict_types=1 );
+
 namespace FileFetcher;
 
 use SimpleCache\Cache\Cache;
@@ -24,13 +26,9 @@ class CachingFileFetcher implements FileFetcher {
 
 	/**
 	 * @see FileFetcher::fetchFile
-	 *
-	 * @param string $fileUrl
-	 *
-	 * @return string
 	 * @throws FileFetchingException
 	 */
-	public function fetchFile( $fileUrl ) {
+	public function fetchFile( string $fileUrl ): string {
 		$fileContents = $this->cache->get( $fileUrl );
 
 		if ( $fileContents === null ) {
@@ -40,7 +38,7 @@ class CachingFileFetcher implements FileFetcher {
 		return $fileContents;
 	}
 
-	private function retrieveAndCacheFile( $fileUrl ) {
+	private function retrieveAndCacheFile( $fileUrl ): string {
 		$fileContents = $this->fileFetcher->fetchFile( $fileUrl );
 
 		$this->cache->set( $fileUrl, $fileContents );

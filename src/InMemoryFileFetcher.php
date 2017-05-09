@@ -1,5 +1,7 @@
 <?php
 
+declare( strict_types=1 );
+
 namespace FileFetcher;
 
 use InvalidArgumentException;
@@ -11,6 +13,8 @@ use InvalidArgumentException;
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class InMemoryFileFetcher implements FileFetcher {
+
+	private $files;
 
 	/**
 	 * @param string[] $files
@@ -28,13 +32,9 @@ class InMemoryFileFetcher implements FileFetcher {
 
 	/**
 	 * @see FileFetcher::fetchFile
-	 *
-	 * @param string $fileUrl
-	 *
-	 * @return string
 	 * @throws FileFetchingException
 	 */
-	public function fetchFile( $fileUrl ) {
+	public function fetchFile( string $fileUrl ): string {
 		if ( array_key_exists( $fileUrl, $this->files ) ) {
 			return $this->files[$fileUrl];
 		}
