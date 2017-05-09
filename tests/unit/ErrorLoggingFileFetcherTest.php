@@ -61,7 +61,7 @@ class ErrorLoggingFileFetcherTest extends TestCase {
 		// @codingStandardsIgnoreEnd
 
 		$calls = $logger->getLogCalls();
-		$this->assertSame( 1, $calls->count() );
+		$this->assertCount( 1, $calls );
 		$this->assertArrayHasKey( 'exception', $calls->getFirstCall()->getContext() );
 
 	}
