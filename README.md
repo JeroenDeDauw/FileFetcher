@@ -24,7 +24,7 @@ It also provides a number of generic [decorators](https://en.wikipedia.org/wiki/
 
 * `ErrorLoggingFileFetcher`: Logs errors via the [PSR-3 LoggerInterface](http://www.php-fig.org/psr/psr-3/)
 * `CachingFileFetcher`: Adds caching capabilities using the [SimpleCache library](https://github.com/JeroenDeDauw/SimpleCache)
-* `SpyingFileFetcher`: A [spy (test double)](https://martinfowler.com/bliki/TestDouble.html)
+* `SpyingFileFetcher`: A [spy (test double)](https://www.entropywins.wtf/blog/2016/05/13/5-ways-to-write-better-mocks/)
 
 ## Installation
 
