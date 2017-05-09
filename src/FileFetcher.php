@@ -5,7 +5,7 @@ declare( strict_types=1 );
 namespace FileFetcher;
 
 /**
- * @since 3.0, scalar type hints since 3.2
+ * @since 3.0, scalar type hints since 4.0
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
