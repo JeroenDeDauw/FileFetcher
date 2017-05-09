@@ -19,11 +19,11 @@ the git repository and take care of loading yourself.
 To add this package as a local, per-project dependency to your project, simply add a
 dependency on `jeroen/file-fetcher` to your project's `composer.json` file.
 Here is a minimal example of a `composer.json` file that just defines a dependency on
-FileFetcher 3.x:
+FileFetcher 4.x:
 
     {
         "require": {
-            "jeroen/file-fetcher": "^3.0.0"
+            "jeroen/file-fetcher": "^4.0.0"
         }
     }
 
@@ -50,7 +50,7 @@ For a full CI run
 
 ## Release notes
 
-### 3.2.0 (2017-05-09)
+### 4.0.0 (2017-05-09)
 
 * Dropped support for PHP 5.x
 * Added scalar type hints to the `FileFetcher` interface and its implementations
