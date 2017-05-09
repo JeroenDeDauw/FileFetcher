@@ -28,10 +28,10 @@ FileFetcher 4.x:
 
 The library provides two trivial implementations of the `FileFetcher` interface at its heart:
 
-* `SimpleFileFetcher`: Adapter around file_get_contents
+* `SimpleFileFetcher`: [Adapter](https://en.wikipedia.org/wiki/Adapter_pattern) around file_get_contents
 * `InMemoryFileFetcher`: Adapter around an array provided to its constructor
 
-It also provides a number of generic decorators:
+It also provides a number of generic [decorators](https://en.wikipedia.org/wiki/Decorator_pattern):
 
 * `CachingFileFetcher`: Adds caching capabilities using the [SimpleCache library](https://github.com/JeroenDeDauw/SimpleCache)
 * `SpyingFileFetcher`: A [spy (test double)](https://martinfowler.com/bliki/TestDouble.html)
