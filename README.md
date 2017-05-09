@@ -6,7 +6,8 @@
 [![Latest Stable Version](https://poser.pugx.org/jeroen/file-fetcher/version.png)](https://packagist.org/packages/jeroen/file-fetcher)
 [![Download count](https://poser.pugx.org/jeroen/file-fetcher/d/total.png)](https://packagist.org/packages/jeroen/file-fetcher)
 
-The philosophy behind this library is to provide a very basic interface (`FileFetcher`) that while insufficient for
+The philosophy behind this library is to provide a very basic interface
+([`FileFetcher`](https://github.com/JeroenDeDauw/FileFetcher/blob/master/src/FileFetcher.php)) that while insufficient for
 plenty of use cases, is ideal for a great many, in particular replacing procedural `file_get_contents` calls.
 The provided implementations are to facilitate testing and common generic tasks around the actual file
 fetching. You are encouraged to create your own core file fetching implementation in your codebase,
