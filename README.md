@@ -28,11 +28,12 @@ FileFetcher 4.x:
 
 The library provides two trivial implementations of the `FileFetcher` interface at its heart:
 
-* `SimpleFileFetcher`: [Adapter](https://en.wikipedia.org/wiki/Adapter_pattern) around file_get_contents
+* `SimpleFileFetcher`: [Adapter](https://en.wikipedia.org/wiki/Adapter_pattern) around `file_get_contents`
 * `InMemoryFileFetcher`: Adapter around an array provided to its constructor (construct with [] for a "throwing fetcher")
 
 It also provides a number of generic [decorators](https://en.wikipedia.org/wiki/Decorator_pattern):
 
+* `ErrorLoggingFileFetcher`: Logs errors via the [PSR-3 LoggerInterface](http://www.php-fig.org/psr/psr-3/)
 * `CachingFileFetcher`: Adds caching capabilities using the [SimpleCache library](https://github.com/JeroenDeDauw/SimpleCache)
 * `SpyingFileFetcher`: A [spy (test double)](https://martinfowler.com/bliki/TestDouble.html)
 
@@ -60,9 +61,15 @@ For a full CI run
 
 ### 4.0.0 (2017-05-09)
 
-* Dropped support for PHP 5.x
+Breaking changes:
+
 * Added scalar type hints to the `FileFetcher` interface and its implementations
 * Added scalar type hints to `FileFetchingException`
+
+Other changes:
+
+* Dropped support for PHP 5.x
+* Added `ErrorLoggingFileFetcher`
 * Added `SpyingFileFetcher`
 
 ### 3.1.0 (2016-01-07)
