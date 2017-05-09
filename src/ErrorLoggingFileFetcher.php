@@ -5,6 +5,7 @@ declare( strict_types = 1 );
 namespace FileFetcher;
 
 use Psr\Log\LoggerInterface;
+use Psr\Log\LogLevel;
 
 /**
  * @license GNU GPL v2+
@@ -14,10 +15,12 @@ class ErrorLoggingFileFetcher implements FileFetcher {
 
 	private $wrappedFileFetcher;
 	private $logger;
+	private $logLevel;
 
-	public function __construct( FileFetcher $fileFetcher, LoggerInterface $logger ) {
+	public function __construct( FileFetcher $fileFetcher, LoggerInterface $logger, string $logLevel = LogLevel::ERROR ) {
 		$this->wrappedFileFetcher = $fileFetcher;
 		$this->logger = $logger;
+		$this->logLevel = $logLevel;
 	}
 
 	/**
@@ -28,9 +31,13 @@ class ErrorLoggingFileFetcher implements FileFetcher {
 		try {
 			return $this->wrappedFileFetcher->fetchFile( $fileUrl );
 		} catch ( FileFetchingException $e ) {
-			$this->logger->error( $e->getMessage(), [
-				'exception' => $e
-			] );
+			$this->logger->log(
+				$this->logLevel,
+				$e->getMessage(),
+				[
+					'exception' => $e
+				]
+			);
 			throw $e;
 		}
 	}
