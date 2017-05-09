@@ -1,12 +1,29 @@
 # FileFetcher
 
-Small library providing a simple FileFetcher interface.
-
 [![Build Status](https://secure.travis-ci.org/JeroenDeDauw/FileFetcher.png?branch=master)](http://travis-ci.org/JeroenDeDauw/FileFetcher)
 [![Coverage Status](https://coveralls.io/repos/JeroenDeDauw/FileFetcher/badge.png?branch=master)](https://coveralls.io/r/JeroenDeDauw/FileFetcher?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/JeroenDeDauw/FileFetcher/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/JeroenDeDauw/FileFetcher/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/jeroen/file-fetcher/version.png)](https://packagist.org/packages/jeroen/file-fetcher)
 [![Download count](https://poser.pugx.org/jeroen/file-fetcher/d/total.png)](https://packagist.org/packages/jeroen/file-fetcher)
+
+The philosophy behind this library is to provide a very basic interface (`FileFetcher`) that while insufficient for
+plenty of use cases, is ideal for a great many, in particular replacing procedural `file_get_contents` calls.
+The provided implementations are to facilitate testing and common generic tasks around the actual file
+fetching. You are encouraged to create your own core file fetching implementation in your codebase,
+presumably an adapter to a library that focuses on this task such as [Guzzle](http://docs.guzzlephp.org/en/latest/).
+
+## Usage
+
+The library provides two trivial implementations of the `FileFetcher` interface at its heart:
+
+* `SimpleFileFetcher`: [Adapter](https://en.wikipedia.org/wiki/Adapter_pattern) around `file_get_contents`
+* `InMemoryFileFetcher`: Adapter around an array provided to its constructor (construct with [] for a "throwing fetcher")
+
+It also provides a number of generic [decorators](https://en.wikipedia.org/wiki/Decorator_pattern):
+
+* `ErrorLoggingFileFetcher`: Logs errors via the [PSR-3 LoggerInterface](http://www.php-fig.org/psr/psr-3/)
+* `CachingFileFetcher`: Adds caching capabilities using the [SimpleCache library](https://github.com/JeroenDeDauw/SimpleCache)
+* `SpyingFileFetcher`: A [spy (test double)](https://martinfowler.com/bliki/TestDouble.html)
 
 ## Installation
 
@@ -23,25 +40,6 @@ FileFetcher 4.x:
             "jeroen/file-fetcher": "^4.0.0"
         }
     }
-
-## Usage
-
-The library provides two trivial implementations of the `FileFetcher` interface at its heart:
-
-* `SimpleFileFetcher`: [Adapter](https://en.wikipedia.org/wiki/Adapter_pattern) around `file_get_contents`
-* `InMemoryFileFetcher`: Adapter around an array provided to its constructor (construct with [] for a "throwing fetcher")
-
-It also provides a number of generic [decorators](https://en.wikipedia.org/wiki/Decorator_pattern):
-
-* `ErrorLoggingFileFetcher`: Logs errors via the [PSR-3 LoggerInterface](http://www.php-fig.org/psr/psr-3/)
-* `CachingFileFetcher`: Adds caching capabilities using the [SimpleCache library](https://github.com/JeroenDeDauw/SimpleCache)
-* `SpyingFileFetcher`: A [spy (test double)](https://martinfowler.com/bliki/TestDouble.html)
-
-The philosophy behind this library is to provide a very basic interface that while insufficient for
-plenty of use cases, is ideal for a great many, in particular replacing procedural `file_get_contents` calls.
-The provided implementations are to facilitate testing and common generic tasks around the actual file
-fetching. You are encouraged to create your own core implementation in your codebase, presumably an
-adapter to a more heavy weight library such as [Guzzle](http://docs.guzzlephp.org/en/latest/).
 
 ## Running the tests
 
