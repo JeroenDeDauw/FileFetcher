@@ -7,6 +7,7 @@ namespace FileFetcher\Tests\Phpunit;
 use FileFetcher\FileFetchingException;
 use FileFetcher\InMemoryFileFetcher;
 use FileFetcher\SpyingFileFetcher;
+use FileFetcher\ThrowingFileFetcher;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -55,9 +56,7 @@ class SpyingFileFetcherTest extends TestCase {
 	}
 
 	public function testCallsCausingExceptionsGetRecorded() {
-		$innerFetcher = new InMemoryFileFetcher( [] );
-
-		$spyingFetcher = new SpyingFileFetcher( $innerFetcher );
+		$spyingFetcher = new SpyingFileFetcher( new ThrowingFileFetcher() );
 
 		// @codingStandardsIgnoreStart
 		try {
