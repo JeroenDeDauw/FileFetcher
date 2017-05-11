@@ -17,26 +17,26 @@ use PHPUnit\Framework\TestCase;
 class InMemoryFileFetcherTest extends TestCase {
 
 	public function testWhenEmptyHash_requestsCauseException() {
-		$fetcher = new InMemoryFileFetcher( array() );
+		$fetcher = new InMemoryFileFetcher( [] );
 
 		$this->expectException( FileFetchingException::class );
 		$fetcher->fetchFile( 'http://foo.bar/baz' );
 	}
 
 	public function testWhenUrlNotKnown_requestsCauseException() {
-		$fetcher = new InMemoryFileFetcher( array(
+		$fetcher = new InMemoryFileFetcher( [
 			'http://something.else/entirely' => 'kittens'
-		) );
+		] );
 
 		$this->expectException( FileFetchingException::class );
 		$fetcher->fetchFile( 'http://foo.bar/baz' );
 	}
 
 	public function testWhenUrlKnown_requestsReturnsValue() {
-		$fetcher = new InMemoryFileFetcher( array(
+		$fetcher = new InMemoryFileFetcher( [
 			'http://something.else/entirely' => 'kittens',
 			'http://foo.bar/baz' => 'cats'
-		) );
+		] );
 
 		$this->assertSame( 'cats', $fetcher->fetchFile( 'http://foo.bar/baz' ) );
 	}

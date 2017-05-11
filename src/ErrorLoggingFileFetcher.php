@@ -10,6 +10,7 @@ use Psr\Log\LogLevel;
 /**
  * @license GNU GPL v2+
  * @author Gabriel Birke < gabriel.birke@wikimedia.de >
+ * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class ErrorLoggingFileFetcher implements FileFetcher {
 

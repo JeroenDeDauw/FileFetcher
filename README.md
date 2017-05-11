@@ -15,10 +15,12 @@ presumably an adapter to a library that focuses on this task such as [Guzzle](ht
 
 ## Usage
 
-The library provides two trivial implementations of the `FileFetcher` interface at its heart:
+The library provides some trivial implementations of the `FileFetcher` interface at its heart:
 
 * `SimpleFileFetcher`: [Adapter](https://en.wikipedia.org/wiki/Adapter_pattern) around `file_get_contents`
-* `InMemoryFileFetcher`: Adapter around an array provided to its constructor (construct with [] for a "throwing fetcher")
+* `InMemoryFileFetcher`: Adapter around an array provided to its constructor
+* `ThrowingFileFetcher`: Throws a `FileFetchingException` for all calls
+* `NullFileFetcher`: Returns an empty string for all calls
 
 It also provides a number of generic [decorators](https://en.wikipedia.org/wiki/Decorator_pattern):
 
@@ -57,6 +59,11 @@ For a full CI run
 	composer ci
 
 ## Release notes
+
+### 4.1.0 (2017-05-11)
+
+* Added `ThrowingFileFetcher`
+* Added `NullFileFetcher`
 
 ### 4.0.0 (2017-05-09)
 

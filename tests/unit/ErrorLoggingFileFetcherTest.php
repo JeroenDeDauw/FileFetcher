@@ -7,6 +7,7 @@ namespace FileFetcher\Tests\Phpunit;
 use FileFetcher\ErrorLoggingFileFetcher;
 use FileFetcher\FileFetchingException;
 use FileFetcher\InMemoryFileFetcher;
+use FileFetcher\ThrowingFileFetcher;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LogLevel;
 use Psr\Log\NullLogger;
@@ -15,10 +16,11 @@ use WMDE\PsrLogTestDoubles\LoggerSpy;
 /**
  * @license GNU GPL v2+
  * @author Gabriel Birke < gabriel.birke@wikimedia.de >
+ * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class ErrorLoggingFileFetcherTest extends TestCase {
 
-	public function testGivenSucceedingFileFetcher_itsContentIsReturned() {
+	public function testWhenWrappedFetcherReturnsValue_itIsReturned() {
 		$logger = new LoggerSpy();
 		$fileFetcher = new ErrorLoggingFileFetcher(
 			new InMemoryFileFetcher( [ 'song.txt' => 'I\'m a little teapot' ] ),
@@ -28,19 +30,19 @@ class ErrorLoggingFileFetcherTest extends TestCase {
 		$logger->assertNoLoggingCallsWhereMade();
 	}
 
-	public function testGivenFailingFileFetcher_anExceptionIsThrown() {
+	public function testWhenWrappedFetcherThrowsAnException_itIsRethrown() {
 		$errorLoggingFileFetcher = new ErrorLoggingFileFetcher(
-			new InMemoryFileFetcher( [] ),
+			new ThrowingFileFetcher(),
 			new NullLogger()
 		);
 		$this->expectException( FileFetchingException::class );
 		$errorLoggingFileFetcher->fetchFile( 'song.txt' );
 	}
 
-	public function testGivenFailingFileFetcher_theExceptionIsLogged() {
+	public function testWhenWrappedFetcherThrowsAnException_theExceptionIsLogged() {
 		$logger = new LoggerSpy();
 		$fileFetcher = new ErrorLoggingFileFetcher(
-			new InMemoryFileFetcher( [] ),
+			new ThrowingFileFetcher(),
 			$logger
 		);
 
@@ -61,7 +63,7 @@ class ErrorLoggingFileFetcherTest extends TestCase {
 	public function testGivenLogLevel_exceptionsAreLoggedAtThisLevel() {
 		$logger = new LoggerSpy();
 		$fileFetcher = new ErrorLoggingFileFetcher(
-			new InMemoryFileFetcher( [] ),
+			new ThrowingFileFetcher(),
 			$logger,
 			LogLevel::CRITICAL
 		);
