@@ -94,11 +94,11 @@ Other changes:
 
 ### 1.0.1
 
-* Added SimpleFileFetcher implementation
+* Added `SimpleFileFetcher` implementation
 
 ### 1.0.0
 
-* Initial release with FileFetcher interface and CachingFileFetcher implementation
+* Initial release with `FileFetcher` interface and `CachingFileFetcher` implementation
 
 ## Links
 
