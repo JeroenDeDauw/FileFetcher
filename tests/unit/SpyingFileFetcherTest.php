@@ -6,6 +6,7 @@ namespace FileFetcher\Tests\Phpunit;
 
 use FileFetcher\FileFetchingException;
 use FileFetcher\InMemoryFileFetcher;
+use FileFetcher\NullFileFetcher;
 use FileFetcher\SpyingFileFetcher;
 use FileFetcher\ThrowingFileFetcher;
 use PHPUnit\Framework\TestCase;
@@ -73,6 +74,25 @@ class SpyingFileFetcherTest extends TestCase {
 		// @codingStandardsIgnoreEnd
 
 		$this->assertSame( [ 'url', 'foo' ], $spyingFetcher->getFetchedUrls() );
+	}
+
+	public function testWhenThereAreSomeCalls_getFirstFetchedUrlReturnsTheFirstOne() {
+		$innerFetcher = new InMemoryFileFetcher( [
+			'url' => 'content',
+			'foo' => 'bar'
+		] );
+
+		$spyingFetcher = new SpyingFileFetcher( $innerFetcher );
+		$spyingFetcher->fetchFile( 'url' );
+		$spyingFetcher->fetchFile( 'foo' );
+
+		$this->assertSame( 'url', $spyingFetcher->getFirstFetchedUrl() );
+	}
+
+	public function testWhenThereAreNoCalls_getFirstFetchedUrlReturnsNull() {
+		$spyingFetcher = new SpyingFileFetcher( new NullFileFetcher() );
+
+		$this->assertNull( $spyingFetcher->getFirstFetchedUrl() );
 	}
 
 }

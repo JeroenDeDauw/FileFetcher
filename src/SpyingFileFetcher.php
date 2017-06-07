@@ -40,4 +40,13 @@ class SpyingFileFetcher implements FileFetcher {
 		return $this->fetchedUrls;
 	}
 
+	/**
+	 * @since 4.3
+	 *
+	 * @return string|null
+	 */
+	public function getFirstFetchedUrl() {
+		return empty( $this->fetchedUrls ) ? null : $this->fetchedUrls[0];
+	}
+
 }
