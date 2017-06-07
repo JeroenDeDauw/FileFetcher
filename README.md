@@ -97,11 +97,11 @@ Other changes:
 
 * Removed `FileFetcher.php` entry point. Autoloading is now done via Composers PSR-4 support.
 
-### 1.0.1
+### 1.0.1 (2013-07-06)
 
 * Added `SimpleFileFetcher` implementation
 
-### 1.0.0
+### 1.0.0 (2013-07-06)
 
 * Initial release with `FileFetcher` interface and `CachingFileFetcher` implementation
 
