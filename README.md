@@ -21,6 +21,7 @@ The library provides some trivial implementations of the `FileFetcher` interface
 * `InMemoryFileFetcher`: Adapter around an array provided to its constructor
 * `ThrowingFileFetcher`: Throws a `FileFetchingException` for all calls
 * `NullFileFetcher`: Returns an empty string for all calls
+* `StubFileFetcher`: Returns a stub value for all calls
 
 It also provides a number of generic [decorators](https://en.wikipedia.org/wiki/Decorator_pattern):
 
@@ -59,6 +60,10 @@ For a full CI run
 	composer ci
 
 ## Release notes
+
+### 4.2.0 (2017-06-17)
+
+* Added `StubFileFetcher`
 
 ### 4.1.0 (2017-05-11)
 
