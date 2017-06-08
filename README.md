@@ -61,6 +61,10 @@ For a full CI run
 
 ## Release notes
 
+### 4.3.0 (dev)
+
+* Added `getFirstFetchedUrl` to `SpyingFileFetcher`
+
 ### 4.2.0 (2017-06-17)
 
 * Added `StubFileFetcher`
