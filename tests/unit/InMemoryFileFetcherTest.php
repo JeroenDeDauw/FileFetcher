@@ -41,4 +41,21 @@ class InMemoryFileFetcherTest extends TestCase {
 		$this->assertSame( 'cats', $fetcher->fetchFile( 'http://foo.bar/baz' ) );
 	}
 
+	public function testWhenThereIsADefault_itIsUsedForUnknownUrls() {
+		$fetcher = new InMemoryFileFetcher( [], 'default kittens' );
+
+		$this->assertSame( 'default kittens', $fetcher->fetchFile( 'http://foo.bar' ) );
+	}
+
+	public function testWhenThereIsADefault_itIsNotUsedForKnownUrls() {
+		$fetcher = new InMemoryFileFetcher(
+			[
+				'http://foo.bar' => 'cats'
+			],
+			'default kittens'
+		);
+
+		$this->assertSame( 'cats', $fetcher->fetchFile( 'http://foo.bar' ) );
+	}
+
 }
