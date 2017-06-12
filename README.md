@@ -61,11 +61,12 @@ For a full CI run
 
 ## Release notes
 
-### 4.3.0 (dev)
+### 4.3.0 (2017-06-10)
 
 * Added `getFirstFetchedUrl` to `SpyingFileFetcher`
+* Added `$defaultContent` constructor parameter to `InMemoryFileFetcher`
 
-### 4.2.0 (2017-06-17)
+### 4.2.0 (2017-06-07)
 
 * Added `StubFileFetcher`
 
