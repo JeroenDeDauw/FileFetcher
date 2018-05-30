@@ -20,46 +20,31 @@
 		}
 	],
 	"require": {
-		"php": ">=7.0",
+		"php": ">=7.1",
 		"jeroen/simple-cache": "~2.0",
 		"psr/log": "~1.0"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~6.1",
-		"squizlabs/php_codesniffer": "~2.1",
-		"phpmd/phpmd": "~2.1",
-		"ockcyp/covers-validator": "~0.6",
-		"wmde/psr-log-test-doubles": "~2.1"
+		"squizlabs/php_codesniffer": "~3.2",
+		"phpmd/phpmd": "~2.6",
+		"ockcyp/covers-validator": "~1.0",
+		"wmde/psr-log-test-doubles": "~2.1",
+		"phpstan/phpstan": "~0.9.2"
 	},
 	"autoload": {
 		"psr-4": {
 			"FileFetcher\\": "src/"
 		}
 	},
-	"extra": {
-		"branch-alias": {
-			"dev-master": "4.3.x-dev"
+	"autoload-dev": {
+		"psr-4": {
+			"FileFetcher\\Tests\\": "tests/"
 		}
 	},
-	"scripts": {
-		"test": [
-			"composer validate --no-interaction",
-			"vendor/bin/phpunit",
-			"vendor/bin/covers-validator"
-		],
-		"cs": [
-			"@phpcs",
-			"@phpmd"
-		],
-		"ci": [
-			"@test",
-			"@cs"
-		],
-		"phpcs": [
-			"vendor/bin/phpcs src/* tests/* --standard=phpcs.xml --extensions=php -sp"
-		],
-		"phpmd": [
-			"vendor/bin/phpmd src/,tests/unit/ text phpmd.xml"
-		]
+	"extra": {
+		"branch-alias": {
+			"dev-master": "4.4.x-dev"
+		}
 	}
 }

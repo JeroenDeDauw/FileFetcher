@@ -2,7 +2,7 @@
 
 declare( strict_types=1 );
 
-namespace FileFetcher\Tests\Phpunit;
+namespace FileFetcher\Tests\Unit;
 
 use FileFetcher\FileFetchingException;
 use FileFetcher\InMemoryFileFetcher;
@@ -12,7 +12,7 @@ use FileFetcher\ThrowingFileFetcher;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers FileFetcher\SpyingFileFetcher
+ * @covers \FileFetcher\SpyingFileFetcher
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >

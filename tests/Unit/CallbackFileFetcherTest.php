@@ -2,7 +2,7 @@
 
 declare( strict_types=1 );
 
-namespace FileFetcher\Tests\Phpunit;
+namespace FileFetcher\Tests\Unit;
 
 use FileFetcher\CallbackFileFetcher;
 use FileFetcher\FileFetchingException;

@@ -2,13 +2,13 @@
 
 declare( strict_types=1 );
 
-namespace FileFetcher\Tests\Phpunit;
+namespace FileFetcher\Tests\Unit;
 
 use FileFetcher\NullFileFetcher;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers FileFetcher\NullFileFetcher
+ * @covers \FileFetcher\NullFileFetcher
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
