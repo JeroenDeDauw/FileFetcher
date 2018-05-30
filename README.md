@@ -22,6 +22,8 @@ The library provides some trivial implementations of the `FileFetcher` interface
 * `ThrowingFileFetcher`: Throws a `FileFetchingException` for all calls
 * `NullFileFetcher`: Returns an empty string for all calls
 * `StubFileFetcher`: Returns a stub value for all calls
+* `CallbackFileFetcher`: Adapter around a callback
+* `LazyStubFileFetcher`: Return a lazily retrieved stub value for all calls
 
 It also provides a number of generic [decorators](https://en.wikipedia.org/wiki/Decorator_pattern):
 
@@ -60,6 +62,11 @@ For a full CI run
 	composer ci
 
 ## Release notes
+
+### 4.4.0 (2018-05-31)
+
+* Added `CallbackFileFetcher`
+* Added `LazyStubFileFetcher`
 
 ### 4.3.0 (2017-06-10)
 

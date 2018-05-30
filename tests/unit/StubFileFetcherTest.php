@@ -8,7 +8,7 @@ use FileFetcher\StubFileFetcher;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers FileFetcher\StubFileFetcher
+ * @covers \FileFetcher\StubFileFetcher
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
