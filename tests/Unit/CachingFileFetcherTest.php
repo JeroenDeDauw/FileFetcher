@@ -2,7 +2,7 @@
 
 declare( strict_types=1 );
 
-namespace FileFetcher\Tests\Phpunit;
+namespace FileFetcher\Tests\Unit;
 
 use FileFetcher\CachingFileFetcher;
 use FileFetcher\FileFetcher;
@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 use SimpleCache\Cache\Cache;
 
 /**
- * @covers FileFetcher\CachingFileFetcher
+ * @covers \FileFetcher\CachingFileFetcher
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >

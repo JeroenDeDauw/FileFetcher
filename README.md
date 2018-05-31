@@ -22,6 +22,8 @@ The library provides some trivial implementations of the `FileFetcher` interface
 * `ThrowingFileFetcher`: Throws a `FileFetchingException` for all calls
 * `NullFileFetcher`: Returns an empty string for all calls
 * `StubFileFetcher`: Returns a stub value for all calls
+* `CallbackFileFetcher`: Adapter around a callback
+* `LazyStubFileFetcher`: Return a lazily retrieved stub value for all calls
 
 It also provides a number of generic [decorators](https://en.wikipedia.org/wiki/Decorator_pattern):
 
@@ -45,21 +47,49 @@ FileFetcher 4.x:
         }
     }
 
-## Running the tests
+## Development
 
-For tests only
+For development you need to have Docker and Docker-compose installed. Local PHP and Composer are not needed.
 
-    composer test
+    sudo apt-get install docker docker-compose
 
-For style checks only
+### Running Composer
 
-	composer cs
+To pull in the project dependencies via Composer, run:
 
-For a full CI run
+    make composer install
 
-	composer ci
+You can run other Composer commands via `make run`, but at present this does not support argument flags.
+If you need to execute such a command, you can do so in this format:
+
+    docker run --rm --interactive --tty --volume $PWD:/app -w /app\
+     --volume ~/.composer:/composer --user $(id -u):$(id -g) composer composer install --no-scripts
+
+Where `composer install --no-scripts` is the command being run.
+
+### Running the CI checks
+
+To run all CI checks, which includes PHPUnit tests, PHPCS style checks and coverage tag validation, run:
+
+    make
+    
+### Running the tests
+
+To run just the PHPUnit tests run
+
+    make test
+
+To run only a subset of PHPUnit tests or otherwise pass flags to PHPUnit, run
+
+    docker-compose run --rm app ./vendor/bin/phpunit --filter SomeClassNameOrFilter
 
 ## Release notes
+
+### 4.4.0 (2018-05-31)
+
+* Dropped support for PHP 7.0
+* Added `CallbackFileFetcher`
+* Added `LazyStubFileFetcher`
 
 ### 4.3.0 (2017-06-10)
 

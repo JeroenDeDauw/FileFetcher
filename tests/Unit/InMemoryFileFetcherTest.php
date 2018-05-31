@@ -2,14 +2,14 @@
 
 declare( strict_types=1 );
 
-namespace FileFetcher\Tests\Phpunit;
+namespace FileFetcher\Tests\Unit;
 
 use FileFetcher\FileFetchingException;
 use FileFetcher\InMemoryFileFetcher;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers FileFetcher\InMemoryFileFetcher
+ * @covers \FileFetcher\InMemoryFileFetcher
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >

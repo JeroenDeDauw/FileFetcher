@@ -13,10 +13,10 @@
          verbose="true">
     <testsuites>
         <testsuite name="FileFetcher">
-            <directory>tests/unit</directory>
+            <directory>tests/Unit</directory>
         </testsuite>
         <testsuite name="FileFetcherIntegration">
-            <directory>tests/integration</directory>
+            <directory>tests/Integration</directory>
         </testsuite>
     </testsuites>
     <filter>

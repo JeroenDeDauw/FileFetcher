@@ -9,7 +9,7 @@ use FileFetcher\SimpleFileFetcher;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers FileFetcher\SimpleFileFetcher
+ * @covers \FileFetcher\SimpleFileFetcher
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
@@ -21,7 +21,7 @@ class SimpleFileFetcherTest extends TestCase {
 
 		$contents = $fetcher->fetchFile( __FILE__ );
 
-		$this->assertEquals( file_get_contents( __FILE__ ), $contents );
+		$this->assertSame( file_get_contents( __FILE__ ), $contents );
 	}
 
 	public function testGetThisFileFromGitHub() {
