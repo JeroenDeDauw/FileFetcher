@@ -28,7 +28,7 @@ class SimpleFileFetcherTest extends TestCase {
 		$fetcher = new SimpleFileFetcher();
 
 		$contents = $fetcher->fetchFile(
-			'http://raw.github.com/JeroenDeDauw/FileFetcher/master/tests/integration/SimpleFileFetcherTest.php'
+			'https://raw.githubusercontent.com/JeroenDeDauw/FileFetcher/master/tests/Integration/SimpleFileFetcherTest.php'
 		);
 
 		$this->assertInternalType( 'string', $contents );
