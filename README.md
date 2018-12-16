@@ -7,11 +7,9 @@
 [![Download count](https://poser.pugx.org/jeroen/file-fetcher/d/total.png)](https://packagist.org/packages/jeroen/file-fetcher)
 
 The philosophy behind this library is to provide a very basic interface
-([`FileFetcher`](https://github.com/JeroenDeDauw/FileFetcher/blob/master/src/FileFetcher.php)) that while insufficient for
-plenty of use cases, is ideal for a great many, in particular replacing procedural `file_get_contents` calls.
-The provided implementations are to facilitate testing and common generic tasks around the actual file
-fetching. You are encouraged to create your own core file fetching implementation in your codebase,
-presumably an adapter to a library that focuses on this task such as [Guzzle](http://docs.guzzlephp.org/en/latest/).
+([`FileFetcher`](https://github.com/JeroenDeDauw/FileFetcher/blob/master/src/FileFetcher.php)) that is ideal for 95% of network access cases, such as your typical `file_get_contents` call. It explicitly does not try to deal with the more complex cases.
+
+Several basic implementations are provided. These include the test doubles you typically need to test services that use the `FileFetcher` interface. You can easily create an adapter to a more heavy network access library (such as [Guzzle](http://docs.guzzlephp.org/en/latest/)) in your own codebase.
 
 ## Usage
 
