@@ -9,7 +9,7 @@ use InvalidArgumentException;
 /**
  * @since 3.1
  *
- * @licence GNU GPL v2+
+ * @licence BSD-3-Clause
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class InMemoryFileFetcher implements FileFetcher {

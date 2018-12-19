@@ -7,7 +7,7 @@ namespace FileFetcher;
 /**
  * @since 4.2
  *
- * @licence GNU GPL v2+
+ * @licence BSD-3-Clause
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class StubFileFetcher implements FileFetcher {

@@ -7,9 +7,12 @@
 [![Download count](https://poser.pugx.org/jeroen/file-fetcher/d/total.png)](https://packagist.org/packages/jeroen/file-fetcher)
 
 The philosophy behind this library is to provide a very basic interface
-([`FileFetcher`](https://github.com/JeroenDeDauw/FileFetcher/blob/master/src/FileFetcher.php)) that is ideal for 95% of network access cases, such as your typical `file_get_contents` call. It explicitly does not try to deal with the more complex cases.
+([`FileFetcher`](https://github.com/JeroenDeDauw/FileFetcher/blob/master/src/FileFetcher.php)) that is ideal for 95%
+of network access cases, such as your typical `file_get_contents` call. It explicitly does not try to deal with the more complex cases.
 
-Several basic implementations are provided. These include the test doubles you typically need to test services that use the `FileFetcher` interface. You can easily create an adapter to a more heavy network access library (such as [Guzzle](http://docs.guzzlephp.org/en/latest/)) in your own codebase.
+Several basic implementations are provided. These include the test doubles you typically need to test services
+that use the `FileFetcher` interface. You can easily create an adapter to a more heavy network access library
+(such as [Guzzle](http://docs.guzzlephp.org/en/latest/)) in your own codebase.
 
 ## Usage
 
@@ -82,6 +85,10 @@ To run only a subset of PHPUnit tests or otherwise pass flags to PHPUnit, run
     docker-compose run --rm app ./vendor/bin/phpunit --filter SomeClassNameOrFilter
 
 ## Release notes
+
+### 4.5.0 (2018-12-19)
+
+* Switched License from GPL-2.0-or-later to BSD-3-Clause 
 
 ### 4.4.0 (2018-05-31)
 
