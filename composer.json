@@ -10,7 +10,7 @@
 		"curl"
 	],
 	"homepage": "https://github.com/JeroenDeDauw/FileFetcher",
-	"license": "GPL-2.0-or-later",
+	"license": "BSD-3-Clause",
 	"authors": [
 		{
 			"name": "Jeroen De Dauw",
@@ -44,7 +44,7 @@
 	},
 	"extra": {
 		"branch-alias": {
-			"dev-master": "4.4.x-dev"
+			"dev-master": "4.5.x-dev"
 		}
 	}
 }

@@ -14,7 +14,7 @@ use Psr\Log\NullLogger;
 use WMDE\PsrLogTestDoubles\LoggerSpy;
 
 /**
- * @license GNU GPL v2+
+ * @license BSD-3-Clause
  * @author Gabriel Birke < gabriel.birke@wikimedia.de >
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
