@@ -3,11 +3,20 @@
 	"type": "library",
 	"description": "Simple file fetching interface",
 	"keywords": [
-		"file fetcher",
 		"file_get_contents",
-		"cache",
+		"http",
+		"interface",
+		"test doubles",
+		"mocks",
+		"spies",
+		"stubs",
+		"file fetcher",
 		"wget",
-		"curl"
+		"curl",
+		"request",
+		"http request",
+		"http client",
+		"cache"
 	],
 	"homepage": "https://github.com/JeroenDeDauw/FileFetcher",
 	"license": "GPL-2.0-or-later",
