@@ -16,6 +16,10 @@ that use the `FileFetcher` interface. You can easily create an adapter to a more
 
 ## Usage
 
+```php
+$fileContent = $fileFetcher->fetchFile($fileLocation);
+```
+
 The library provides some trivial implementations of the `FileFetcher` interface at its heart:
 
 * `SimpleFileFetcher`: [Adapter](https://en.wikipedia.org/wiki/Adapter_pattern) around `file_get_contents`
