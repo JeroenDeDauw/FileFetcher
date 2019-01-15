@@ -1,13 +1,18 @@
 <?php
 
-declare( strict_types=1 );
+declare( strict_types = 1 );
 
 namespace FileFetcher;
 
 use SimpleCache\Cache\Cache;
 
 /**
- * Decorator for FileFetcher objects that adds caching capabilities.
+ * Decorator that caches files using jeroen/simple-cache.
+ * https://packagist.org/packages/jeroen/simple-cache
+ *
+ * Requires jeroen/simple-cache which is not loaded by default as of version 5.0
+ *
+ * See also: PsrCacheFileFetcher, which does the same thing, but with the more popular psr/simple-cache
  *
  * @since 3.0
  *

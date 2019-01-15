@@ -30,15 +30,13 @@ The library provides some trivial implementations of the `FileFetcher` interface
 * `CallbackFileFetcher`: Adapter around a callback
 * `LazyStubFileFetcher`: Return a lazily retrieved stub value for all calls
 
-It also provides a number of generic [decorators](https://en.wikipedia.org/wiki/Decorator_pattern):
+It also provides a number of [decorators](https://en.wikipedia.org/wiki/Decorator_pattern):
 
-* `ErrorLoggingFileFetcher`: Logs errors via the [PSR-3 LoggerInterface](http://www.php-fig.org/psr/psr-3/)
-* `CachingFileFetcher`: Adds caching capabilities using the [SimpleCache library](https://github.com/JeroenDeDauw/SimpleCache)
+* `ErrorLoggingFileFetcher`: Logs errors via the [PSR-3 LoggerInterface](https://www.php-fig.org/psr/psr-3/)
+* `PsrCacheFileFetcher`: Caches file contents via [PSR-16 SimpleCache](https://www.php-fig.org/psr/psr-16/)
 * `SpyingFileFetcher`: A [spy (test double)](https://www.entropywins.wtf/blog/2016/05/13/5-ways-to-write-better-mocks/)
-
-And a specific decorator:
-
-* `StopwatchFileFetcher`: Profiles calls using Symfony Stopwatch. Requires symfony/stopwatch to be loaded
+* `StopwatchFileFetcher`: Profiles calls using Symfony Stopwatch. Requires `symfony/stopwatch` to be loaded
+* `CachingFileFetcher`: Caches file contents. Requires `jeroen/simple-cache` to be loaded
 
 ## Installation
 
@@ -94,9 +92,11 @@ To run only a subset of PHPUnit tests or otherwise pass flags to PHPUnit, run
 
 ## Release notes
 
-### 4.6.0 (2019-01-15)
+### 5.0.0 (2019-01-15)
 
+* Added `PsrCacheFileFetcher`
 * Added `StopwatchFileFetcher`
+* `jeroen/simple-cache`, which is needed by `CachingFileFetcher` is no longer loaded by default
 
 ### 4.5.0 (2018-12-19)
 
