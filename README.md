@@ -36,6 +36,10 @@ It also provides a number of generic [decorators](https://en.wikipedia.org/wiki/
 * `CachingFileFetcher`: Adds caching capabilities using the [SimpleCache library](https://github.com/JeroenDeDauw/SimpleCache)
 * `SpyingFileFetcher`: A [spy (test double)](https://www.entropywins.wtf/blog/2016/05/13/5-ways-to-write-better-mocks/)
 
+And a specific decorator:
+
+* `StopwatchFileFetcher`: Profiles calls using Symfony Stopwatch. Requires symfony/stopwatch to be loaded
+
 ## Installation
 
 You can use [Composer](http://getcomposer.org/) to download and install
@@ -48,7 +52,7 @@ FileFetcher 4.x:
 
     {
         "require": {
-            "jeroen/file-fetcher": "^4.0.0"
+            "jeroen/file-fetcher": "~4.0"
         }
     }
 
@@ -89,6 +93,10 @@ To run only a subset of PHPUnit tests or otherwise pass flags to PHPUnit, run
     docker-compose run --rm app ./vendor/bin/phpunit --filter SomeClassNameOrFilter
 
 ## Release notes
+
+### 4.6.0 (2019-01-15)
+
+* Added `StopwatchFileFetcher`
 
 ### 4.5.0 (2018-12-19)
 

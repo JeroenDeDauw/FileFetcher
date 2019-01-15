@@ -39,7 +39,8 @@
 		"phpmd/phpmd": "~2.6",
 		"ockcyp/covers-validator": "~1.0",
 		"wmde/psr-log-test-doubles": "~2.1",
-		"phpstan/phpstan": "~0.10.1"
+		"phpstan/phpstan": "~0.10.1",
+		"symfony/stopwatch": "~4.2"
 	},
 	"autoload": {
 		"psr-4": {
@@ -53,7 +54,7 @@
 	},
 	"extra": {
 		"branch-alias": {
-			"dev-master": "4.5.x-dev"
+			"dev-master": "4.6.x-dev"
 		}
 	}
 }
