@@ -24,20 +24,47 @@ class PsrCacheFileFetcherTest extends TestCase {
 	private const FILE_URL = 'foo://bar';
 	private const FILE_CONTENT = 'NyanData across the sky!';
 
-	public function testWhenFileIsNotCached_itGetsRetrieved() {
-		$cachingFetcher = new PsrCacheFileFetcher(
-			new InMemoryFileFetcher( [
-				self::FILE_URL => self::FILE_CONTENT
-			] ),
-			$this->newNullCache(),
-			function( string $string ): string {
-				return $string;
-			}
+	private $fileFetcher;
+	private $cache;
+	private $keyBuilder;
+
+	public function setUp() {
+		$this->fileFetcher = new InMemoryFileFetcher( [
+			self::FILE_URL => self::FILE_CONTENT
+		] );
+
+		$this->cache = $this->newCacheWithFile();
+
+		$this->keyBuilder = function( string $string ): string {
+			return $string;
+		};
+	}
+
+	private function newCacheWithFile(): CacheInterface {
+		$cache = $this->createMock( CacheInterface::class );
+
+		$cache->expects( $this->any() )
+			->method( 'get' )
+			->with( self::FILE_URL )
+			->will( $this->returnValue( self::FILE_CONTENT ) );
+
+		return $cache;
+	}
+
+	private function newCachingFileFetcher(): PsrCacheFileFetcher {
+		return new PsrCacheFileFetcher(
+			$this->fileFetcher,
+			$this->cache,
+			$this->keyBuilder
 		);
+	}
+
+	public function testWhenFileIsNotCached_itGetsRetrieved() {
+		$this->cache = $this->newNullCache();
 
 		$this->assertSame(
 			self::FILE_CONTENT,
-			$cachingFetcher->fetchFile( self::FILE_URL )
+			$this->newCachingFileFetcher()->fetchFile( self::FILE_URL )
 		);
 	}
 
@@ -53,78 +80,42 @@ class PsrCacheFileFetcherTest extends TestCase {
 	}
 
 	public function testWhenFileIsCached_cachedContentsGetsReturned() {
-		$cachingFetcher = new PsrCacheFileFetcher(
-			new ThrowingFileFetcher(),
-			$this->newCacheWithFile(),
-			function( string $string ): string {
-				return $string;
-			}
-		);
+		$this->fileFetcher = new ThrowingFileFetcher();
 
 		$this->assertSame(
 			self::FILE_CONTENT,
-			$cachingFetcher->fetchFile( self::FILE_URL )
+			$this->newCachingFileFetcher()->fetchFile( self::FILE_URL )
 		);
 	}
 
-	private function newCacheWithFile(): CacheInterface {
-		$cache = $this->createMock( CacheInterface::class );
-
-		$cache->expects( $this->once() )
-			->method( 'get' )
-			->with( self::FILE_URL )
-			->will( $this->returnValue( self::FILE_CONTENT ) );
-
-		return $cache;
-	}
-
 	public function testWhenFileIsNotCached_fileContentsGetsCached() {
-		$cache = $this->newNullCache();
+		$this->cache = $this->newNullCache();
 
-		$cache->expects( $this->once() )
+		$this->cache->expects( $this->once() )
 			->method( 'set' )
 			->with(
 				$this->equalTo( self::FILE_URL ),
 				$this->equalTo( self::FILE_CONTENT )
 			);
 
-		$cachingFetcher = new PsrCacheFileFetcher(
-			new InMemoryFileFetcher( [
-				self::FILE_URL => self::FILE_CONTENT
-			] ),
-			$cache,
-			function( string $string ): string {
-				return $string;
-			}
-		);
-
-		$cachingFetcher->fetchFile( self::FILE_URL );
+		$this->newCachingFileFetcher()->fetchFile( self::FILE_URL );
 	}
 
 	public function testWhenFetcherThrowsException_itIsNotCaught() {
-		$fetcher = new PsrCacheFileFetcher(
-			new ThrowingFileFetcher(),
-			$this->newNullCache(),
-			function( string $string ): string {
-				return $string;
-			}
-		);
+		$this->cache = $this->newNullCache();
+		$this->fileFetcher = new ThrowingFileFetcher();
+		$fetcher = $this->newCachingFileFetcher();
 
 		$this->expectException( FileFetchingException::class );
 		$fetcher->fetchFile( self::FILE_URL );
 	}
 
 	public function testWhenCacheReadThrowsException_fileContentIsFetched() {
-		$cachingFetcher = new PsrCacheFileFetcher(
-			new InMemoryFileFetcher( [
-				self::FILE_URL => self::FILE_CONTENT
-			] ),
-			$this->newCacheThatThrowsOnGet()
-		);
+		$this->cache = $this->newCacheThatThrowsOnGet();
 
 		$this->assertSame(
 			self::FILE_CONTENT,
-			$cachingFetcher->fetchFile( self::FILE_URL )
+			$this->newCachingFileFetcher()->fetchFile( self::FILE_URL )
 		);
 	}
 
@@ -144,16 +135,11 @@ class PsrCacheFileFetcherTest extends TestCase {
 	}
 
 	public function testWhenCacheWriteThrowsException_fileContentIsReturned() {
-		$cachingFetcher = new PsrCacheFileFetcher(
-			new InMemoryFileFetcher( [
-				self::FILE_URL => self::FILE_CONTENT
-			] ),
-			$this->newCacheThatThrowsOnSet()
-		);
+		$this->cache = $this->newCacheThatThrowsOnSet();
 
 		$this->assertSame(
 			self::FILE_CONTENT,
-			$cachingFetcher->fetchFile( self::FILE_URL )
+			$this->newCachingFileFetcher()->fetchFile( self::FILE_URL )
 		);
 	}
 
