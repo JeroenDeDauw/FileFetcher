@@ -92,7 +92,7 @@ To run only a subset of PHPUnit tests or otherwise pass flags to PHPUnit, run
 
 ## Release notes
 
-### 5.0.0 (2019-01-15)
+### 5.0.0 (2019-01-16)
 
 * Added `PsrCacheFileFetcher`
 * Added `StopwatchFileFetcher`
