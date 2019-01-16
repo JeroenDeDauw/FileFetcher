@@ -82,13 +82,17 @@ To run all CI checks, which includes PHPUnit tests, PHPCS style checks and cover
     
 ### Running the tests
 
-To run just the PHPUnit tests run
+To run just the PHPUnit tests using Docker, execute
 
     make test
 
-To run only a subset of PHPUnit tests or otherwise pass flags to PHPUnit, run
+To run only a subset of PHPUnit tests or otherwise pass flags to PHPUnit, execute
 
     docker-compose run --rm app ./vendor/bin/phpunit --filter SomeClassNameOrFilter
+
+To run the PHPUnit tests without Docker (requires having PHP installed), execute
+
+    vendor/bin/phpunit
 
 ## Release notes
 
