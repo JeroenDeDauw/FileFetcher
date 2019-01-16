@@ -6,7 +6,6 @@ namespace FileFetcher\Tests\Unit;
 
 use FileFetcher\FileFetchingException;
 use FileFetcher\InMemoryFileFetcher;
-use FileFetcher\NullFileFetcher;
 use FileFetcher\PsrCacheFileFetcher;
 use FileFetcher\ThrowingFileFetcher;
 use PHPUnit\Framework\TestCase;
