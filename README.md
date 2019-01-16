@@ -46,11 +46,11 @@ this package as well as its dependencies.
 To add this package as a local, per-project dependency to your project, simply add a
 dependency on `jeroen/file-fetcher` to your project's `composer.json` file.
 Here is a minimal example of a `composer.json` file that just defines a dependency on
-FileFetcher 4.x:
+FileFetcher 5.x:
 
     {
         "require": {
-            "jeroen/file-fetcher": "~4.0"
+            "jeroen/file-fetcher": "~5.0"
         }
     }
 
