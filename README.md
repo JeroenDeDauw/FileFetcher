@@ -33,10 +33,16 @@ The library provides some trivial implementations of the `FileFetcher` interface
 It also provides a number of [decorators](https://en.wikipedia.org/wiki/Decorator_pattern):
 
 * `ErrorLoggingFileFetcher`: Logs errors via the [PSR-3 LoggerInterface](https://www.php-fig.org/psr/psr-3/)
-* `PsrCacheFileFetcher`: Caches file contents via [PSR-16 SimpleCache](https://www.php-fig.org/psr/psr-16/)
 * `SpyingFileFetcher`: A [spy (test double)](https://www.entropywins.wtf/blog/2016/05/13/5-ways-to-write-better-mocks/)
-* `StopwatchFileFetcher`: Profiles calls using Symfony Stopwatch. Requires `symfony/stopwatch` to be loaded
+
+Decorators provided by [jeroen/file-fetcher-cache](https://github.com/JeroenDeDauw/file-fetcher-cache):
+
+* `PsrCacheFileFetcher`: Caches file contents via [PSR-16 SimpleCache](https://www.php-fig.org/psr/psr-16/)
 * `CachingFileFetcher`: Caches file contents. Requires `jeroen/simple-cache` to be loaded
+
+Decorators provided by [jeroen/file-fetcher-stopwatch](https://github.com/JeroenDeDauw/file-fetcher-stopwatch):
+
+* `StopwatchFileFetcher`: Profiles calls using Symfony Stopwatch. Requires `symfony/stopwatch` to be loaded
 
 ## Installation
 
@@ -46,51 +52,45 @@ this package as well as its dependencies.
 To add this package as a local, per-project dependency to your project, simply add a
 dependency on `jeroen/file-fetcher` to your project's `composer.json` file.
 Here is a minimal example of a `composer.json` file that just defines a dependency on
-FileFetcher 5.x:
+FileFetcher 6.x:
 
     {
         "require": {
-            "jeroen/file-fetcher": "~5.0"
+            "jeroen/file-fetcher": "~6.0"
         }
     }
 
 ## Development
 
-For development you need to have Docker and Docker-compose installed. Local PHP and Composer are not needed.
+Start by installing the project dependencies by executing
 
-    sudo apt-get install docker docker-compose
+    composer update
 
-### Running Composer
-
-To pull in the project dependencies via Composer, run:
-
-    make composer install
-
-You can run other Composer commands via `make run`, but at present this does not support argument flags.
-If you need to execute such a command, you can do so in this format:
-
-    docker run --rm --interactive --tty --volume $PWD:/app -w /app\
-     --volume ~/.composer:/composer --user $(id -u):$(id -g) composer composer install --no-scripts
-
-Where `composer install --no-scripts` is the command being run.
-
-### Running the CI checks
-
-To run all CI checks, which includes PHPUnit tests, PHPCS style checks and coverage tag validation, run:
-
-    make
-    
-### Running the tests
-
-To run just the PHPUnit tests run
+You can run the tests by executing
 
     make test
+    
+You can run the style checks by executing
 
-To run only a subset of PHPUnit tests or otherwise pass flags to PHPUnit, run
+    make cs
+    
+To run all CI checks, execute
 
-    docker-compose run --rm app ./vendor/bin/phpunit --filter SomeClassNameOrFilter
+    make ci
+    
+You can also invoke PHPUnit directly to pass it arguments, as follows
+
+    vendor/bin/phpunit --filter SomeClassNameOrFilter
 
 ## Release notes
+
+### 6.0.0 (2019-01-17)
+
+Breaking changes to increase package stability and avoid the need for breaking changes in the future.
+
+* Removed `PsrCacheFileFetcher`, now part of `jeroen/file-fetcher-cache`
+* Removed `CachingFileFetcher`, now part of `jeroen/file-fetcher-cache`
+* Removed `StopwatchFileFetcher`, now part of `jeroen/file-fetcher-stopwatch`
 
 ### 5.0.1 (2019-01-16)
 
