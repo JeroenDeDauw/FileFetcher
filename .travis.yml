@@ -8,7 +8,7 @@ php:
 
 sudo: false
 
-install: travis_retry make composer install
+install: travis_retry composer install
 
 script:
   - composer validate --no-interaction
