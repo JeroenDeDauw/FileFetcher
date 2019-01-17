@@ -52,7 +52,11 @@
 	},
 	"extra": {
 		"branch-alias": {
-			"dev-master": "5.0.x-dev"
+			"dev-master": "6.0.x-dev"
 		}
+	},
+	"suggest": {
+		"jeroen/file-fetcher-cache ": "Provides a SimpleCache (PSR-16) decorator for file fetchers",
+		"jeroen/file-fetcher-stopwatch": "Provides a Symfony Stopwatch decorator for file fetchers"
 	}
 }
