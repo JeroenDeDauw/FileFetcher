@@ -15,8 +15,7 @@
 		"curl",
 		"request",
 		"http request",
-		"http client",
-		"cache"
+		"http client"
 	],
 	"homepage": "https://github.com/JeroenDeDauw/FileFetcher",
 	"license": "BSD-3-Clause",
@@ -56,7 +55,7 @@
 		}
 	},
 	"suggest": {
-		"jeroen/file-fetcher-cache ": "Provides a SimpleCache (PSR-16) decorator for file fetchers",
+		"jeroen/file-fetcher-cache": "Provides a SimpleCache (PSR-16) decorator for file fetchers",
 		"jeroen/file-fetcher-stopwatch": "Provides a Symfony Stopwatch decorator for file fetchers"
 	}
 }
