@@ -31,27 +31,27 @@ class SimpleFileFetcherTest extends TestCase {
 			'https://raw.githubusercontent.com/JeroenDeDauw/FileFetcher/master/tests/Integration/SimpleFileFetcherTest.php'
 		);
 
-		$this->assertInternalType( 'string', $contents );
+		$this->assertIsString( $contents );
 
-		$this->assertInternalType( 'integer', strpos( $contents, __FUNCTION__ ) );
+		$this->assertContains( __FUNCTION__, $contents );
 	}
 
 	public function testGivenNotFoundFile_exceptionIsThrown() {
 		$fetcher = new SimpleFileFetcher();
+		$invalidRemoteFileUrl = 'http://raw.github.com/JeroenDeDauw/FileFetcher/master/foo.php';
 
 		$this->expectException( FileFetchingException::class );
-		$fetcher->fetchFile(
-			'http://raw.github.com/JeroenDeDauw/FileFetcher/master/foo.php'
-		);
+		$this->expectExceptionMessage( 'Could not fetch file: ' . $invalidRemoteFileUrl );
+		$fetcher->fetchFile( $invalidRemoteFileUrl );
 	}
 
 	public function testGivenInvalidUrl_exceptionIsThrown() {
 		$fetcher = new SimpleFileFetcher();
+		$invalidRemoteFileUrl = 'foo bar baz';
 
 		$this->expectException( FileFetchingException::class );
-		$fetcher->fetchFile(
-			'foo bar baz'
-		);
+		$this->expectExceptionMessage( 'Could not fetch file: ' . $invalidRemoteFileUrl );
+		$fetcher->fetchFile( $invalidRemoteFileUrl );
 	}
 
 }

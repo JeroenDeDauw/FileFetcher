@@ -35,8 +35,10 @@ class ErrorLoggingFileFetcherTest extends TestCase {
 			new ThrowingFileFetcher(),
 			new NullLogger()
 		);
+		$invalidFilePath = 'song.txt';
 		$this->expectException( FileFetchingException::class );
-		$errorLoggingFileFetcher->fetchFile( 'song.txt' );
+		$this->expectExceptionMessage( 'Could not fetch file: ' . $invalidFilePath );
+		$errorLoggingFileFetcher->fetchFile( $invalidFilePath );
 	}
 
 	public function testWhenWrappedFetcherThrowsAnException_theExceptionIsLogged() {

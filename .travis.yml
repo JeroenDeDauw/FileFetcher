@@ -6,6 +6,10 @@ php:
   - 7.3
   - master
 
+matrix:
+  allow_failures:
+    - php: master
+
 sudo: false
 
 install: travis_retry composer install

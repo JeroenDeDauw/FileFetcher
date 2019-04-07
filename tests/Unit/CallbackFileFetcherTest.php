@@ -28,8 +28,10 @@ class CallbackFileFetcherTest extends TestCase {
 		$fetcher = new CallbackFileFetcher( function( string $fileUrl ) {
 			throw new FileFetchingException( $fileUrl );
 		} );
+		$invalidFileUrl = 'Such';
 
 		$this->expectException( FileFetchingException::class );
+		$this->expectExceptionMessage( 'Could not fetch file: ' . $invalidFileUrl );
 		$fetcher->fetchFile( 'Such' );
 	}
 
