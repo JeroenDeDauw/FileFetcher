@@ -8,7 +8,6 @@ use InvalidArgumentException;
 use FileFetcher\FileFetchingException;
 use FileFetcher\InMemoryFileFetcher;
 use PHPUnit\Framework\TestCase;
-use Nette\InvalidArgumentException as NetteInvalidArgumentException;
 
 /**
  * @covers \FileFetcher\InMemoryFileFetcher
