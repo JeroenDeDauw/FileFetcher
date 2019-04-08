@@ -28,8 +28,11 @@ class SpyingFileFetcherTest extends TestCase {
 
 		$this->assertSame( 'content', $spyingFetcher->fetchFile( 'url' ) );
 
+		$invalidFilePath = 'foo';
+
 		$this->expectException( FileFetchingException::class );
-		$spyingFetcher->fetchFile( 'foo' );
+		$this->expectExceptionMessage( 'Could not fetch file: ' . $invalidFilePath );
+		$spyingFetcher->fetchFile( $invalidFilePath );
 	}
 
 	public function testWhenNoCalls_getFetchedUrlsReturnsEmptyArray() {
@@ -38,8 +41,10 @@ class SpyingFileFetcherTest extends TestCase {
 		] );
 
 		$spyingFetcher = new SpyingFileFetcher( $innerFetcher );
+		$result = $spyingFetcher->getFetchedUrls();
 
-		$this->assertSame( [], $spyingFetcher->getFetchedUrls() );
+		$this->assertIsArray( $result );
+		$this->assertSame( [], $result );
 	}
 
 	public function testWhenSomeCalls_getFetchedUrlsReturnsTheArguments() {
