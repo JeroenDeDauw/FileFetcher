@@ -54,6 +54,10 @@
         <exclude-pattern>*Test\.php</exclude-pattern>
     </rule>
 
+    <rule ref="Generic.NamingConventions.InterfaceNameSuffix.Missing">
+        <severity>0</severity>
+    </rule>
+
     <rule ref="Generic.PHP.CharacterBeforePHPOpeningTag" />
     <rule ref="Generic.PHP.DeprecatedFunctions" />
     <rule ref="Generic.PHP.DisallowShortOpenTag" />

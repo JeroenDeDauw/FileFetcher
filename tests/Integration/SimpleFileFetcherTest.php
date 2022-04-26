@@ -33,7 +33,7 @@ class SimpleFileFetcherTest extends TestCase {
 
 		$this->assertIsString( $contents );
 
-		$this->assertContains( __FUNCTION__, $contents );
+		$this->assertStringContainsString( __FUNCTION__, $contents );
 	}
 
 	public function testGivenNotFoundFile_exceptionIsThrown() {
