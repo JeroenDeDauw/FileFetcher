@@ -1,0 +1,99 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  test:
+    name: "PHPUnit PHP ${{ matrix.php }}"
+
+    strategy:
+      matrix:
+        php: [ 7.3, 7.4, 8.0, 8.1, rc ]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup PHP
+        if: matrix.coverage
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          tools: composer
+          coverage: pcov
+
+      - uses: actions/checkout@v2
+
+      - name: Cache Composer cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.composer/cache
+          key: composer-cache-php${{ matrix.php }}
+
+      - name: Composer install
+        run: composer install --no-progress --no-suggest --no-interaction --prefer-dist --optimize-autoloader
+
+      - name: Run PHPUnit
+        run: |
+          if [[ "$php" == 8.0 ]]; then
+            php vendor/bin/phpunit --coverage-clover coverage.xml
+          else
+             php vendor/bin/phpunit
+          fi
+        env:
+          php: ${{ matrix.php }}
+
+      - name: Upload code coverage
+        run: bash <(curl -s https://codecov.io/bash)
+        if: matrix.php == 8.0
+
+  code-style:
+    name: "Code Style"
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.0
+          tools: composer
+
+      - uses: actions/checkout@v2
+
+      - name: Cache Composer cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.composer/cache
+          key: composer-cache-php8.0
+
+      - name: Composer install
+        run: composer install --no-progress --no-suggest --no-interaction --prefer-dist --optimize-autoloader
+
+      - run: make cs
+
+  static-analysis:
+    name: "Static Analaysis"
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.0
+          tools: composer
+
+      - uses: actions/checkout@v2
+
+      - name: Cache Composer cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.composer/cache
+          key: composer-cache-php8.0
+
+      - name: Composer install
+        run: composer install --no-progress --no-suggest --no-interaction --prefer-dist --optimize-autoloader
+
+      - run: make stan

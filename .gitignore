@@ -1,11 +1,4 @@
-.*
-*~
-*.kate-swp
-
 !.gitignore
-!.gitreview
-!.travis.yml
-!.scrutinizer.yml
-
+.phpunit.result.cache
 /vendor/
 composer.lock
