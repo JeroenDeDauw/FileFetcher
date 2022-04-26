@@ -14,11 +14,18 @@ use InvalidArgumentException;
  */
 class InMemoryFileFetcher implements FileFetcher {
 
+	/**
+	 * @var string[]
+	 */
 	private $files;
+
+	/**
+	 * @var string|null
+	 */
 	private $defaultContent;
 
 	/**
-	 * @param string[] $files
+	 * @param array<string, string> $files
 	 * @param string|null $defaultContent Content that is returned when there is no matching entry in $files
 	 * @throws InvalidArgumentException
 	 */

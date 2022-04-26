@@ -14,13 +14,16 @@ namespace FileFetcher;
  */
 class CallbackFileFetcher implements FileFetcher {
 
+	/**
+	 * @var callable(string):string
+	 */
 	private $callback;
 
 	/**
 	 * The callback should have the same signature and contract as @see FileFetcher::fetchFile()
 	 * Note that this contract include not throwing exceptions other than FileFetchingException.
 	 *
-	 * @param callable $callback
+	 * @param callable(string):string $callback
 	 */
 	public function __construct( callable $callback ) {
 		$this->callback = $callback;

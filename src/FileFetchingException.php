@@ -12,6 +12,9 @@ namespace FileFetcher;
  */
 class FileFetchingException extends \RuntimeException {
 
+	/**
+	 * @var string
+	 */
 	private $fileUrl;
 
 	public function __construct( string $fileUrl, string $message = null, \Exception $previous = null ) {

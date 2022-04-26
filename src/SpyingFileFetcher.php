@@ -16,6 +16,9 @@ class SpyingFileFetcher implements FileFetcher {
 
 	private $fileFetcher;
 
+	/**
+	 * @var string[]
+	 */
 	private $fetchedUrls = [];
 
 	public function __construct( FileFetcher $fileFetcher ) {
