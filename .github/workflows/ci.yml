@@ -35,7 +35,6 @@ jobs:
 
       - name: Run PHPUnit
         run: |
-          echo "php: $php"
           if [[ "$php" == 8.1 ]]; then
             php vendor/bin/phpunit --coverage-clover coverage.xml
           else
