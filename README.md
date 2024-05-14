@@ -1,6 +1,6 @@
 # FileFetcher
 
-[![Build Status](https://img.shields.io/github/workflow/status/JeroenDeDauw/FileFetcher/CI)](https://github.com/JeroenDeDauw/FileFetcher/actions?query=workflow%3ACI)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/JeroenDeDauw/FileFetcher/ci.yml)](https://github.com/JeroenDeDauw/FileFetcher/actions?query=workflow%3ACI)
 [![codecov](https://codecov.io/gh/JeroenDeDauw/FileFetcher/branch/master/graph/badge.svg)](https://codecov.io/gh/JeroenDeDauw/FileFetcher)
 [![Type Coverage](https://shepherd.dev/github/JeroenDeDauw/FileFetcher/coverage.svg)](https://shepherd.dev/github/JeroenDeDauw/FileFetcher)
 [![Psalm level](https://shepherd.dev/github/JeroenDeDauw/FileFetcher/level.svg)](psalm.xml)
