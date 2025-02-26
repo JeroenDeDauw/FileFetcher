@@ -88,7 +88,7 @@ You can also invoke PHPUnit directly to pass it arguments, as follows
 
 ### 6.1.1 (2025-02-27)
 
-* Improve nullable types for PHP 8.4 compatibility
+* Improved PHP 8.4+ compatibility by explicitly defining nullable types 
 
 ### 6.1.0 (2022-04-26)
 
