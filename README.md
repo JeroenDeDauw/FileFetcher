@@ -4,8 +4,9 @@
 [![codecov](https://codecov.io/gh/JeroenDeDauw/FileFetcher/branch/master/graph/badge.svg)](https://codecov.io/gh/JeroenDeDauw/FileFetcher)
 [![Type Coverage](https://shepherd.dev/github/JeroenDeDauw/FileFetcher/coverage.svg)](https://shepherd.dev/github/JeroenDeDauw/FileFetcher)
 [![Psalm level](https://shepherd.dev/github/JeroenDeDauw/FileFetcher/level.svg)](psalm.xml)
-[![Latest Stable Version](https://poser.pugx.org/jeroen/file-fetcher/version.png)](https://packagist.org/packages/jeroen/file-fetcher)
-[![Download count](https://poser.pugx.org/jeroen/file-fetcher/d/total.png)](https://packagist.org/packages/jeroen/file-fetcher)
+[![Latest Stable Version](https://poser.pugx.org/jeroen/file-fetcher/v/stable)](https://packagist.org/packages/jeroen/file-fetcher)
+[![Download count](https://poser.pugx.org/jeroen/file-fetcher/downloads)](https://packagist.org/packages/jeroen/file-fetcher)
+[![License](https://poser.pugx.org/jeroen/file-fetcher/license)](LICENSE)
 
 The philosophy behind this library is to provide a very basic interface
 ([`FileFetcher`](https://github.com/JeroenDeDauw/FileFetcher/blob/master/src/FileFetcher.php)) that is ideal for 95%
