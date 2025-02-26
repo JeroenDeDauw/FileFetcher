@@ -17,7 +17,7 @@ class FileFetchingException extends \RuntimeException {
 	 */
 	private $fileUrl;
 
-	public function __construct( string $fileUrl, string $message = null, \Exception $previous = null ) {
+	public function __construct( string $fileUrl, ?string $message = null, ?\Exception $previous = null ) {
 		$this->fileUrl = $fileUrl;
 
 		parent::__construct(

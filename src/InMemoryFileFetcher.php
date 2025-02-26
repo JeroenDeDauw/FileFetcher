@@ -29,7 +29,7 @@ class InMemoryFileFetcher implements FileFetcher {
 	 * @param string|null $defaultContent Content that is returned when there is no matching entry in $files
 	 * @throws InvalidArgumentException
 	 */
-	public function __construct( array $files, string $defaultContent = null ) {
+	public function __construct( array $files, ?string $defaultContent = null ) {
 		foreach ( $files as $url => $fileContents ) {
 			if ( !is_string( $url ) || !is_string( $fileContents ) ) {
 				throw new InvalidArgumentException( 'Both file url and file contents need to be of type string' );
