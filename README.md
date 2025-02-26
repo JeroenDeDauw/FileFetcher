@@ -86,6 +86,10 @@ You can also invoke PHPUnit directly to pass it arguments, as follows
 
 ## Release notes
 
+### 6.1.1 (2025-02-27)
+
+* Improve nullable types for PHP 8.4 compatibility
+
 ### 6.1.0 (2022-04-26)
 
 * Added support for installation with `psr/log` 2.x and 3.x
